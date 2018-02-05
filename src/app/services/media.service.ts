@@ -15,6 +15,7 @@ export class MediaService {
 
   loginUrl = 'http://media.mw.metropolia.fi/wbma/login';
   apiUrl = 'http://media.mw.metropolia.fi/wbma/';
+  mediaUrl = 'http://media.mw.metropolia.fi/wbma/media';
 
   constructor(private http: HttpClient, private router: Router) {
   }
@@ -48,5 +49,12 @@ export class MediaService {
 
   public register(user) {
     return this.http.post(this.apiUrl + '/users', user);
+  }
+
+  public uploading(file) {
+    const settings = {
+      headers: new HttpHeaders().set('x-access-token', localStorage.getItem('token')),
+    };
+   return this.http.post(this.mediaUrl, file, settings);
   }
 }

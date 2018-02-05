@@ -4,6 +4,7 @@ import {LogoutComponent} from './logout/logout.component';
 import {RegisterComponent} from './register/register.component';
 import {LoginComponent} from './login/login.component';
 import {FrontComponent} from './front/front.component';
+import {UploadComponent} from './upload/upload.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'front',
     component: FrontComponent
+  },
+  {
+    path: 'upload',
+    component: UploadComponent
   }
 ];
 
